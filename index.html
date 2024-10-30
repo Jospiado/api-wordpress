@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download PDF from Base64</title>
+</head>
+<body>
+    <h1>Download PDF from Base64</h1>
+    
+    <button onclick="baixarPDF()">Download PDF</button>
+
+    <script>
+        // String Base64 de exemplo (substitua pela sua string Base64 real)
+        const pdfBase64 = 'JVBERi0xLjcNCiW1tbW1DQoxIDAgb2JqDQo8PC9UeXBlL0NhdGFsb2cvUGFnZXMgMiAwIFIvTGFuZyhwdCkgL1N0cnVjdFRyZWVSb290IDE2IDAgUi9NYXJrSW5mbzw8L01hcmtlZCB0cnVlPj4vTWV0YWRhdGEgNTk5IDAgUi9WaWV3ZXJQcmVmZXJlbmNlcyA2MDAgMCBSPj4NCmVuZG9iag0KMiAwIG9iag0KPDwvVHlwZS9QYWdlcy9Db3VudCAyL0tpZHNbIDQgMCBSIDE0IDAgUl0gPj4NCmVuZG9iag0KMyAwIG9iag0KPDwvQXV0aG9yKE1pY2hlbGxlIEJvcmdlcykgL0NyZWF0aW9uRGF0ZShEOjIwMjQxMDI1MTEwODU4LTAzJzAwJykgL01vZERhdGUoRDoyMDI0MTAyNTExMDg1OC0wMycwMCcpIC9Qcm9kdWNlcij'; // Substitua isso com o conteúdo real do seu PDF em Base64
+
+        function baixarPDF() {
+            // Converte a string Base64 para um formato de link de dados
+            const linkSource = `data:application/pdf;base64,${pdfBase64}`;
+            const downloadLink = document.createElement("a");
+            const fileName = "meuarquivo.pdf"; // Nome do arquivo para o download
+
+            downloadLink.href = linkSource;
+            downloadLink.download = fileName;
+            downloadLink.click(); // Simula o clique para baixar o arquivo
+        }
+    </script>
+</body>
+</html>
+
